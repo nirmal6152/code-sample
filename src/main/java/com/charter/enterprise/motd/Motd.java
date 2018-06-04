@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Motd {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Motd.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(Motd.class, args);
+	}
 }
-

@@ -17,13 +17,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class MotdControllerTest {
-    @Autowired
-    private MockMvc mvc;
 
-    @Test
-    public void getMotd() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Goodbye world!")));
-    }
+	@Autowired
+	private MockMvc mvc;
+
+	@Autowired
+	private MessageService msgServiceMock;
+
+	@Test
+	public void getMotd() throws Exception {
+
+		mvc.perform(MockMvcRequestBuilders.get("/")).andExpect(status().isOk())
+				.andExpect(content().string(equalTo(msgServiceMock.getDailyMessage())));
+	}
 }
