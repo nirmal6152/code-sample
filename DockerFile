@@ -2,4 +2,3 @@ FROM java:8
 EXPOSE 8080
 ADD /target/motd-code-sample-1.0-SNAPSHOT.jar /motd-code-sample-1.0-SNAPSHOT.jar
 ENTRYPOINT ["java", "-jar", "motd-code-sample-1.0-SNAPSHOT.jar"]
-
